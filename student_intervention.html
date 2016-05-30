@@ -11800,7 +11800,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11852,7 +11852,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Calculate number of students</span>
@@ -11870,7 +11870,7 @@ div#notebook {
 <span class="n">n_failed</span> <span class="o">=</span> <span class="n">n_students</span><span class="o">-</span><span class="n">n_passed</span>
 
 <span class="c1"># TODO: Calculate graduation rate</span>
-<span class="n">grad_rate</span> <span class="o">=</span> <span class="n">n_passed</span><span class="o">/</span><span class="n">n_students</span>
+<span class="n">grad_rate</span> <span class="o">=</span> <span class="nb">float</span> <span class="p">(</span> <span class="n">n_passed</span> <span class="p">)</span><span class="o">/</span> <span class="n">n_students</span><span class="o">*</span><span class="mi">100</span>
 
 <span class="c1"># Print the results</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of students: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_students</span><span class="p">))</span>
@@ -11894,7 +11894,7 @@ div#notebook {
 Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
-Graduation rate of the class: 0.67%
+Graduation rate of the class: 67.09%
 </pre>
 </div>
 </div>
@@ -12146,18 +12146,18 @@ Testing set has 95 samples.
 <p>Seeks to classify instances into classes, such that the margin between the classes in the hyperspace is maximized:</p>
 <p>Every instance in the training hyperspace is represented by a vector. The SVM tries to find a hyperplane that divides the instances into classes. In order to perform this task it thus needs linear separability of the instances (often obtained by applying the "kernel trick"). The distance of the instance vectors, that lie the closest to the hyperplane, is maximized. With that, SVM tries to ensure the generalization to unknown data sets.</p>
 <p>The set-up of the hyperplane is not depending on instance vectors which lie far away from the hyperplane. The hyperplane is only determined on the instance vectors with close distance to the the plane: the support vectors.</p>
-<p>Strengths: work well in complicated domains</p>
-<p>Weaknesses: Prone to overfitting with large datasets and/or lots of features and/or datasets with lots of noise</p>
-<p>Why I chose them: SVM are classifiers. They do well on reasonably small feature sets / smaller data sets.</p>
+<h3 id="V2###-Industry-Applications:-SVM-seem-to-have-a-huge-variety-of-application-in-very-different-fields,-like-a-toolbox-with-a-tool-for-a-lot-of-classification-problems:-Text-classification,-image-classification,-signal-processing,-financial-time-series-forecasting,-bankruptcy-prediction">V2### Industry Applications: SVM seem to have a huge variety of application in very different fields, like a toolbox with a tool for a lot of classification problems: Text classification, image classification, signal processing, financial time series forecasting, bankruptcy prediction<a class="anchor-link" href="#V2###-Industry-Applications:-SVM-seem-to-have-a-huge-variety-of-application-in-very-different-fields,-like-a-toolbox-with-a-tool-for-a-lot-of-classification-problems:-Text-classification,-image-classification,-signal-processing,-financial-time-series-forecasting,-bankruptcy-prediction">&#182;</a></h3><p>Strengths: work well in complicated domains</p>
+<p>Weaknesses: <del>Prone to overfitting</del> ###V2### DO NOT WORK WELL with large datasets and/or lots of features and/or datasets with lots of noise</p>
+<h3 id="V2###-This-comes-from-Sebastian-Thrun,-&quot;SVM-Strengths-and-Weaknesses&quot;,-which-is-part-of-this-course:-https://classroom.udacity.com/nanodegrees/nd009/parts/0091345404/modules/544698886575460/lessons/5447009165/concepts/23841887100923">V2### This comes from Sebastian Thrun, "SVM Strengths and Weaknesses", which is part of this course: <a href="https://classroom.udacity.com/nanodegrees/nd009/parts/0091345404/modules/544698886575460/lessons/5447009165/concepts/23841887100923">https://classroom.udacity.com/nanodegrees/nd009/parts/0091345404/modules/544698886575460/lessons/5447009165/concepts/23841887100923</a><a class="anchor-link" href="#V2###-This-comes-from-Sebastian-Thrun,-&quot;SVM-Strengths-and-Weaknesses&quot;,-which-is-part-of-this-course:-https://classroom.udacity.com/nanodegrees/nd009/parts/0091345404/modules/544698886575460/lessons/5447009165/concepts/23841887100923">&#182;</a></h3><p>Why I chose them: SVM are classifiers. They do well on reasonably small feature sets / smaller data sets.</p>
 <p>2) Decision Tree</p>
 <p>Decision Trees are a method for the automated classification of instances by iterating through a series of questions / decisions and thus narrowing down the possibilies from step to step. They are consisting of nodes (representing the features), edges (feature values), and leaves (label). Since every node eliminates at least half of the possibilities for the nodes further down the tree, it is pivotal to choose the features which "split the data best" sequentially. In order to detect those, one uses metrics like ID3 which measure the information gain / reduction of randomness / entropy loss for each decision. A significant feature allows for a large information gain, i.e. reducing the entropy w.r.t the label.</p>
-<p>Strengths: Easy to interpret / graphically interpretable. Can be extended to random forests by ensemble methods.</p>
+<h3 id="V2###-Industry-Applications:-Like-SVM,-Decision-Trees-have-a-broad-variety-of-applications:-Filtering-noise-from-Hubble-Space-Telescope-images,-classification-for-drug-analysis,-detection-of-physical-particles,-power-stability-prediction">V2### Industry Applications: Like SVM, Decision Trees have a broad variety of applications: Filtering noise from Hubble Space Telescope images, classification for drug analysis, detection of physical particles, power stability prediction<a class="anchor-link" href="#V2###-Industry-Applications:-Like-SVM,-Decision-Trees-have-a-broad-variety-of-applications:-Filtering-noise-from-Hubble-Space-Telescope-images,-classification-for-drug-analysis,-detection-of-physical-particles,-power-stability-prediction">&#182;</a></h3><p>Strengths: Easy to interpret / graphically interpretable. Can be extended to random forests by ensemble methods.</p>
 <p>Weaknesses: Prone to overfitting, especially with lots of features. We need to have a close eye on pruning the tree.</p>
 <p>Why I chose them: Decision trees are well suited for discretely valued features. They are classifiers. The do well on reasonably small feature sets.</p>
 <p>3) Nearest Neighbor Classifier</p>
 <p>The k nearest neighbor algorithm is a non-parametric method used for classification. It takes into account the k nearest neighbors by averaging their labels (voting), and thus bases upon saving the full sample and reusing it for prediction over and over again. This method is opposed to parametric learner methods: Parametric learners learn from the training instances and upon completion save only the derived function of the data, not the data itself. Nearest Neighbors Classifier in contrast is an instance method and keeps the full training set. They are thus known as "lazy learners".</p>
 <p>Non-parametric learners step in when it might be hard to model a problem mathematically.</p>
-<p>Strengths: Training is quick. Free from assumptions about the underlying model</p>
+<h3 id="V2###-Industry-Applications:-Like-SVM,-Nearest-Neighbour-Classifiers-have-a-broad-variety-of-applications:-Text-categorization,-stock-market-forecasting,-credit-rating,-estimate-the-amount-of-glucose-in-the-blood-of-adiabetic-person">V2### Industry Applications: Like SVM, Nearest Neighbour Classifiers have a broad variety of applications: Text categorization, stock market forecasting, credit rating, estimate the amount of glucose in the blood of adiabetic person<a class="anchor-link" href="#V2###-Industry-Applications:-Like-SVM,-Nearest-Neighbour-Classifiers-have-a-broad-variety-of-applications:-Text-categorization,-stock-market-forecasting,-credit-rating,-estimate-the-amount-of-glucose-in-the-blood-of-adiabetic-person">&#182;</a></h3><p>Strengths: Training is quick. Free from assumptions about the underlying model</p>
 <p>Weaknesses: Takes a lot of space. Querying is slow</p>
 <p>Why I chose them: I think it is good practice to use at least one non-parametric approach which is free from model assumptions. Since there are not too many instances, both space consumption and query time are of no big concern.</p>
 
@@ -12677,7 +12677,7 @@ Tuned model has a testing F1 score of 0.8082.
 <pre><code>KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', metric_params=None, n_jobs=1, n_neighbors=5, p=2, weights='uniform')) 
 
 </code></pre>
-<p>Therefore, the F1-performance stays exactly the same (0.8553 vs. 0.8082)</p>
+<p>Therefore, the F1-performance stays exactly the same (0.8553 vs. 0.8082).</p>
 <p>What else to do with grid search? If I had taken into account a grid search over p:[1,2], the search would have returned a model with weaker performance on both training and test set (0.7324), the same result happens with a grid search over 'metric':('euclidean', 'manhattan','chebyshev', 'minkowski') and the subsequent grid search choice of metric 'manhattan'. For the sake of comparison, I tried SVM as well, but got slightly weaker results.</p>
 <p>I will stick with this model. Two things to follow up to, in combination: 1) Cross-validate and see if the test set performance stays at .8 in average. Apply Occam's razor: Do active feature selection, cut out features which contribute comparatively little or nothing to the predictive power of the model (&lt;=&gt; see if the F1 performance on the test set remains at around 0.8 when cutting out features), and thereby improve the generalization ability of the model.</p>
 
